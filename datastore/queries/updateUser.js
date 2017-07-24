@@ -6,7 +6,7 @@ module.exports = (id, updatedProperties) => {
     .then(user => {
 
       const u = Object.assign(user,
-        Object.assign({}, { password: updatedProperties.password })
+        Object.assign({}, updatedProperties)
       ).save()
 
     })

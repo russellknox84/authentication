@@ -12,6 +12,7 @@ module.exports = (req, res, next) => {
         if (user) return res.status(422).send({ error: 'Email is already in use' })
         return saveUser({ username, password })
       })
-      .then(user => res.send(generateJwtToken(user)))
+      .then(user => generateJwtToken(user))
+      .then(jwt => res.send(jwt))
       .catch(err => res.status(422).send({ error: 'Something went wrong. Please try again' })))
 }

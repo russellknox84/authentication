@@ -1,7 +1,13 @@
-const authenication = require('./authentication')
+const {
+  signup,
+  signin,
+  updatePassword,
+  authenticate
+} = require('./authentication')
 
 module.exports = (app) => {
-  app.post('/signup', authenication.signup)
-  app.post('/signin', authenication.signin)
-  app.post('/update_password', authenication.updatePassword)
+  app.post('/signup', signup)
+  app.post('/signin', signin)
+  app.post('/update_password', updatePassword)
+  app.get('/authenticate', authenticate)
 }

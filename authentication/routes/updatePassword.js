@@ -4,7 +4,8 @@ const { comparePasswords, generateJwtToken, encryptAndSaltPassword } = require('
 module.exports = (req, res, next) => {
   const { username, password, newPassword } = req.body
 
-  if (!username || !password || !newPassword) return res.status(422).send({ error: 'Both username and passwords are required to change password' })
+  if (!username || !password || !newPassword) return res.status(422).send(
+    { error: 'Both username and passwords are required to change password' })
 
   findUser({ username })
     .then(user => {
