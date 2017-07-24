@@ -8,8 +8,7 @@ module.exports = (req, res, next) => {
 
   findUser({ username })
     .then(user => {
-      const encryptedPassword = user.password
-      comparePasswords(encryptedPassword, password)
+      comparePasswords(user.password, password)
         .then(resp => res.send(generateJwtToken(user)))
         .catch(err => res.status(422).send({ error: 'Either username or password is incorrect' }))
     })

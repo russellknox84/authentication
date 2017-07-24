@@ -1,4 +1,5 @@
 module.exports = {
   findUser: require('./findUser'),
-  saveUser: require('./saveUser')
+  saveUser: require('./saveUser'),
+  updateUser: require('./updateUser')
 }

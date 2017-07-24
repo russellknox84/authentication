@@ -1,6 +1,7 @@
-const { findUser, saveUser } = require('./queries')
+const { findUser, saveUser, updateUser } = require('./queries')
 
 module.exports = {
   findUser,
-  saveUser
+  saveUser,
+  updateUser
 }
